@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MobileAppDevPT20231201.MainPage"
+             Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout BackgroundColor="#555555">
+
+            <Frame Padding="5"
+                CornerRadius="100"
+                VerticalOptions="Start"
+                HorizontalOptions="Center"
+                BorderColor="Orange"
+                HeightRequest="100"
+                WidthRequest="100">
+                <Image Source="vvg.jpg"
+                    Aspect="AspectFill"
+                    HeightRequest="100"
+                    WidthRequest="100"/>
+            </Frame>
+
+            <Label Text="Vincent van Gogh"
+                TextColor="White"
+                FontFamily="Times New Roman"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                FontAttributes="Bold"/>
+
+            <Label Text="Dutch, 1853 - 1890"
+                TextColor="White"
+                FontSize="Small"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"/>
+
+            <Label Text="Was a Dutch Post-Impressionist painter who is among the most famous and influential... Read More"
+                TextColor="White"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"/>
+
+            <Frame BackgroundColor="#555555"
+                BorderColor="Grey"
+                CornerRadius="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="$7.5m"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold"/>
+                    <Label Text="Record"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"/>
+
+                    <Label Text="$3.5m"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold"/>
+                    <Label Text="Average"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"/>
+
+                    <Label Text="+598%"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold"/>
+                    <Label Text="General"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"/>
+
+                    <Label Text="12"
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold"/>
+                    <Label Text="Items"
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"/>
+                </Grid>
+            </Frame>
+
+            <Label Text="Other Van Gogh Works"
+                TextColor="White"
+                HorizontalOptions="Start"
+                HorizontalTextAlignment="Start"/>
+
+            <CollectionView ItemsSource="{Binding Items}"
+                            ItemsLayout="VerticalGrid, 2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="20, 20, 20, 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <Image Source="{Binding Image}"
+                                   Grid.Row="0"/>
+                            <Label Text="{Binding Title}"
+                                   Grid.Row="1"
+                                   TextColor="White"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Price}"
+                                   Grid.Row="2"
+                                   TextColor="White"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
